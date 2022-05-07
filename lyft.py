@@ -38,5 +38,5 @@ def home(request: Request):
 @app.post('/test')
 def test(req: LyftRequest):
     if len(req.string_to_cut) < 3:
-        return {'return_string': 'Error - string not long enough!'}
+        return {'return_string': 'Error - string should be at least 3 characters!'}
     return {'return_string': everyThird(req.string_to_cut)}

@@ -8,9 +8,9 @@
             <h1> Lyft Interview </h1>
             <p> Chris Valente </p>
         </div>
-        <label for="image_file">Enter string to cut: </label>
+        <label for="string_header">Enter string to cut: </label>
         <input class="" type="text" id="string_field">
-        <br>
+        <br><br>
         <button class="btn btn-success" onclick="apiFunction()"> Generate Response </button>
         <br>
         <hr style="width: 100%; text-align: left; margin-left: 0">
@@ -24,7 +24,7 @@
         let string_to_cut = document.getElementById('string_field').value;
         let returnString = '';
         if (string_to_cut.length < 3) {
-
+            console.log('Error - string should be at least 3 characters!');
         }
         else {
             for (let i = 2; i < string_to_cut.length; i += 3) {

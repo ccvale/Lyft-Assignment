@@ -1,6 +1,6 @@
 # Lyft Interview
 
-## Response to the Technical Sample
+## Response to the Technical Portion
 
 - Using Python and FastAPI, we accept the `/test` route that accepts a `string_to_cut` argument
 
