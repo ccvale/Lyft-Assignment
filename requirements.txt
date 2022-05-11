@@ -1,3 +1,4 @@
-
 fastapi==0.76.0
+Jinja2 @ file:///tmp/build/80754af9/jinja2_1612213139570/work
+jinja2-time @ file:///tmp/build/80754af9/jinja2-time_1617751524098/work
 pydantic==1.9.0
