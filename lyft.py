@@ -1,8 +1,6 @@
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
-import uvicorn
-
 class LyftRequest(BaseModel):
     string_to_cut: str
 
@@ -15,16 +13,9 @@ letter from the original string
 {'return_string': 'muydv'}.
 '''
 
-'''
-Deadline: May 13 8PM
-https://boards.greenhouse.io/lyft/jobs/6063505002?gh_jid=6063505002#app
-'''
-
 app = FastAPI()
 
 templates = Jinja2Templates(directory='templates')
-
-# s = 'iamyourlyftdriver'
 
 def everyThird(s: str):
     new = ''
