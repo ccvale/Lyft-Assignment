@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import uvicorn
@@ -39,7 +39,10 @@ def home(request: Request):
 @app.post('/test')
 def test(req: LyftRequest):
     if len(req.string_to_cut) < 3:
-        return {'return_string': 'Error - string should be at least 3 characters!'}
+        raise HTTPException(
+            status_code = 400,
+            detail = f'"{req.string_to_cut}" is not at least 3 characters'
+        )
     return {'return_string': everyThird(req.string_to_cut)}
 
 

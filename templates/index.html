@@ -22,20 +22,21 @@
 <script>
     function apiFunction() {
         let string_to_cut = document.getElementById('string_field').value;
-        let returnString = '';
-        if (string_to_cut.length < 3) {
-            console.log('Error - string should be at least 3 characters!');
-        }
-        else {
-            for (let i = 2; i < string_to_cut.length; i += 3) {
-                returnString += string_to_cut[i];
-            }
-            // returnString works now
-            let resultSec = document.getElementById('bulk_result');
-            let element = document.createElement('result');
-            element.setAttribute('class', 'btn btn-primary');
-            element.innerText = returnString;
-            resultSec.appendChild(element);
-        }
+        $.ajax({
+            type: "POST",
+            url: "/test",
+            contentType: "application/json",
+            data: JSON.stringify({string_to_cut: string_to_cut}),
+            success: function (data) {
+                let resultSec = document.getElementById('bulk_result');
+                let element = document.createElement('result');
+                element.setAttribute('class', 'btn btn-primary');
+                element.innerText = data['return_string'];
+                resultSec.appendChild(element);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown + `: "${string_to_cut}" isn't 3 or more characters!`);
+            }  
+        });
     }
 </script>
