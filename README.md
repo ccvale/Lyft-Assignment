@@ -12,5 +12,5 @@
 
 
 <p align="center">
-  <img alt="curl screenshot" src="https://github.com/ccvale/lyft-assignment/raw/master/curl-screnshot.png" style="border-radius: 20px;">
+  <img alt="curl screenshot" src="https://github.com/ccvale/Lyft-Assignment/blob/master/curl-screenshot.png?raw=true" style="border-radius: 20px;">
 </p>
