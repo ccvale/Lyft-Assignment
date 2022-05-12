@@ -44,7 +44,3 @@ def test(req: LyftRequest):
             detail = f'"{req.string_to_cut}" is not at least 3 characters'
         )
     return {'return_string': everyThird(req.string_to_cut)}
-
-
-if __name__ == '__main__':
-    uvicorn.run('lyft:app', host='localhost', port=8000, reload=True)
