@@ -5,7 +5,7 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1> Lyft Interview </h1>
+            <h1> Lyft Application </h1>
             <p> Chris Valente </p>
         </div>
         <label for="string_header">Enter string to cut: </label>
@@ -23,9 +23,9 @@
     function apiFunction() {
         let string_to_cut = document.getElementById('string_field').value;
         $.ajax({
-            type: "POST",
-            url: "/test",
-            contentType: "application/json",
+            type: 'POST',
+            url: '/test',
+            contentType: 'application/json',
             data: JSON.stringify({string_to_cut: string_to_cut}),
             success: function (data) {
                 let resultSec = document.getElementById('bulk_result');
@@ -34,7 +34,7 @@
                 element.innerText = data['return_string'];
                 resultSec.appendChild(element);
             },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            error: function (errorThrown) {
                 alert(errorThrown + `: "${string_to_cut}" isn't 3 or more characters!`);
             }  
         });
